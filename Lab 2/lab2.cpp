@@ -25,7 +25,7 @@ int sum(int* array0, size_t colElemnt)
     arraysled = arraysled + 1;
 
   }
-  
+
 
 }
 
@@ -34,8 +34,29 @@ int sum(int* array0, size_t colElemnt)
 // 3. Записываем в адресс текущего эелем. массива.  (Arr0)
 // 4. Создаём ячеёку под адресс конечного элемента массива. 
 // 5. Записываем в переменную адресса последнего елем. Arr0 + colElem - 1
-// 6. 
+// 6. Начинаю цикл для перемножения элементов массива.
+// 7. Присваиваю произведение текущего элемента (prodelement) умноженного на значение следующего элемента (*arraysled).
+// 8. Если текущий адрес равен адресу последнего элемента, завершаем цикл и возвращаем произведение.
+// 9. Иначе, увеличиваем адрес текущего элемента на единицу.
 
+int product(int* arr0, size_t colElemnt)
+{
+  int* arraysled;
+  int* arrayposl;
+  int prodelement;
+  arraysled = arr0 + 1;
+  while(true)
+  {
+    prodelement = *arr0;
+    arrayposl = arr0 + colElemnt - 1;
+    prodelement = prodelement * *arraysled;
+    if (arraysled == arrayposl)
+    {
+      return prodelement;
+    }
+    arraysled = arraysled + 1;
+  }
+}
 
 
 int main()
